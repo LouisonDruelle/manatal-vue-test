@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import History from '../views/History.vue';
 import Headline from '../views/Headline.vue';
+import Sources from '../views/Sources.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/headline',
     name: 'Headline',
     component: Headline,
+  },
+  {
+    path: '/sources',
+    name: 'Sources',
+    component: Sources,
   },
 ];
 

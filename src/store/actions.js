@@ -13,7 +13,7 @@ export const getHeadlines = ({ commit }) => {
 export const getSources = ({ commit }) => {
   axios.get(`${API_URL}sources?apiKey=${API_KEY}`)
     .then((response) => {
-      commit('SET_SOURCES', response.data);
+      commit('SET_SOURCES', response.data.sources);
     });
 };
 
