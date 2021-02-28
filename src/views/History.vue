@@ -8,7 +8,7 @@
 import HistoryList from '@/components/HistoryList.vue';
 
 export default {
-  name: 'Home',
+  name: 'History',
   components: {
     HistoryList,
   },
