@@ -42,14 +42,30 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+      <HeadlineDialog :headline="headline" :dialog="dialog" @close="dialog = false"/>
   </div>
 </template>
 
 <script>
 import dayjs from 'dayjs';
+import HeadlineDialog from './headline/HeadlineDialog.vue';
 
 export default {
   props: ['headline'],
+
+  components: {
+    HeadlineDialog,
+  },
+
+  data: () => ({
+    dialog: false,
+  }),
+
+  methods: {
+    editTitle() {
+      this.dialog = true;
+    },
+  },
 
   filters: {
     date(value) {
