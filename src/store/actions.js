@@ -16,3 +16,7 @@ export const getSources = ({ commit }) => {
       commit('SET_SOURCES', response.data);
     });
 };
+
+export const addHeadlineToHistory = ({ commit }, { headline }) => {
+  commit('ADD_TO_HISTORY', { headline });
+};
