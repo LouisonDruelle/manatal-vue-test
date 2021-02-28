@@ -4,8 +4,7 @@
       color="deep-purple accent-4"
       dark
     >
-
-      <v-toolbar-title>News</v-toolbar-title>
+      <v-toolbar-title>SqwaNews.</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -13,10 +12,7 @@
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-menu
-        left
-        bottom
-      >
+      <v-menu left bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
