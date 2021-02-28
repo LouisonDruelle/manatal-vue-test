@@ -22,7 +22,6 @@ export default {
       this.$router.push('/');
     } else {
       this.headline = this.$route.params.headline;
-      console.log(this.headline);
     }
   },
 };
