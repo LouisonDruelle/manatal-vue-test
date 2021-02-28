@@ -30,7 +30,7 @@
           <div>{{ headline.content }}</div>
         </v-card-text>
         <v-card-text class="text--primary py-3">
-          Author: {{ headline.author }} | Source : {{ headline.source.name }}
+          Author: {{ headline.author }}
         </v-card-text>
         <v-card-actions>
           <v-btn
