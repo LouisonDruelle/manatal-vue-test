@@ -35,6 +35,13 @@
         </v-card-text>
         <v-card-actions>
           <v-btn
+            @click="editTitle()"
+            color="purple"
+            text
+          >
+            Edit title
+          </v-btn>
+          <v-btn
             @click="getHeadlineDetails()"
             color="purple"
             text
@@ -44,16 +51,23 @@
         </v-card-actions>
       </v-card>
     </v-lazy>
+    <HeadlineDialog :headline="headline" :dialog="dialog" @close="dialog = false"/>
   </div>
 </template>
 
 <script>
 import dayjs from 'dayjs';
+import HeadlineDialog from './HeadlineDialog.vue';
 
 export default {
   props: ['headline'],
 
+  components: {
+    HeadlineDialog,
+  },
+
   data: () => ({
+    dialog: false,
     isActive: false,
   }),
 
@@ -63,6 +77,9 @@ export default {
         headline: this.headline,
       });
       this.$router.push({ name: 'Headline', params: { headline: this.headline } });
+    },
+    editTitle() {
+      this.dialog = true;
     },
   },
 

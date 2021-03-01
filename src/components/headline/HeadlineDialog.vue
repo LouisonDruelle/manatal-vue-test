@@ -12,23 +12,15 @@
         <v-card-text>
           <v-container>
             <v-textarea
-              :value="headline.title"
+              v-model="headline.title"
               label="Edit title"
               counter="150"
               :rules="[form.rules.required, form.rules.length]"
-              @input="updateTitle"
             ></v-textarea>
           </v-container>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn
-            color="blue darken-1"
-            text
-            @click="close()"
-          >
-            Close
-          </v-btn>
           <v-btn
             color="blue darken-1"
             text
@@ -47,7 +39,6 @@ export default {
   props: ['dialog', 'headline'],
 
   data: () => ({
-    title: '',
     form: {
       rules: {
         required: (v) => !!v || 'Required',
@@ -63,16 +54,12 @@ export default {
   },
   methods: {
     save() {
-      if (this.title && this.title.length < 150) {
-        this.headline.title = this.title;
+      if (this.headline.title && this.headline.title.length < 150) {
+        this.$store.dispatch('updateHeadline', {
+          headline: this.headline,
+        });
         this.$emit('close');
       }
-    },
-    close() {
-      this.$emit('close');
-    },
-    updateTitle(value) {
-      this.title = value;
     },
   },
 };
