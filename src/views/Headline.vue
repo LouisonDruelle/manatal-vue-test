@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HeadlineDetailsCard from '@/components/HeadlineDetailsCard.vue';
+import HeadlineDetailsCard from '@/components/headline/HeadlineDetailsCard.vue';
 
 export default {
   name: 'Headline',

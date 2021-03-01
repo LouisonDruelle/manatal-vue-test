@@ -10,13 +10,13 @@
 </template>
 
 <script>
+import SectionTitle from '../SectionTitle.vue';
 import HeadlineCard from './HeadlineCard.vue';
-import SectionTitle from './SectionTitle.vue';
 
 export default {
   components: {
-    HeadlineCard,
     SectionTitle,
+    HeadlineCard,
   },
 
   computed: {

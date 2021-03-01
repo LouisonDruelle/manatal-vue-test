@@ -48,7 +48,7 @@
 
 <script>
 import dayjs from 'dayjs';
-import HeadlineDialog from './headline/HeadlineDialog.vue';
+import HeadlineDialog from './HeadlineDialog.vue';
 
 export default {
   props: ['headline'],
