@@ -33,7 +33,6 @@ export default {
 
   mounted() {
     this.$store.dispatch('getSources');
-    console.log(this.$store.state.sources);
   },
 };
 </script>
