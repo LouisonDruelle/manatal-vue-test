@@ -4,7 +4,7 @@
       color="deep-purple accent-4"
       dark
     >
-      <v-toolbar-title>SqwaNews.</v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/')">SqwaNews.</v-toolbar-title>
 
       <v-spacer></v-spacer>
       <v-col
@@ -18,7 +18,7 @@
         dense
         hide-details
         v-model="keyword"
-        @keydown="searchHeadline"
+        @keydown="searchHeadlines"
       ></v-text-field>
       </v-col>
       <v-menu>
@@ -33,8 +33,13 @@
         </template>
 
         <v-list>
-          <v-list-item link class="px-10">
-            <v-list-item-title @click="$router.push('history')">History</v-list-item-title>
+          <v-list-item
+            v-for="(item, i) in routes"
+            :key="i"
+            link
+            @click="$router.push(item.route)"
+          >
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -46,12 +51,21 @@
 export default {
   data: () => ({
     keyword: '',
+    routes: [
+      { title: 'History', route: '/history' },
+      { title: 'Sources', route: '/sources' },
+      { title: 'Error example', route: '/error' },
+    ],
   }),
   methods: {
-    searchHeadline() {
-      this.$store.dispatch('searchHeadlines', {
-        keyword: this.keyword,
-      });
+    async searchHeadlines() {
+      try {
+        await this.$store.dispatch('searchHeadlines', {
+          keyword: this.keyword,
+        });
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 };
