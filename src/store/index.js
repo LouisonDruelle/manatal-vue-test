@@ -24,6 +24,14 @@ export default new Vuex.Store({
     SET_SOURCES(state, sources) {
       state.sources = sources;
     },
+    UPDATE_HEADLINE(state, headline) {
+      const index = state.headlines.findIndex((item) => item.urlToImage === headline.urlToImage);
+      state.headlines = [
+        ...state.headlines.slice(0, index),
+        headline,
+        ...state.headlines.slice(index + 1),
+      ];
+    },
   },
   actions: {
     async getHeadlines({ commit }) {
@@ -48,6 +56,9 @@ export default new Vuex.Store({
       const response = await axios.get('https://newsapi.org/v2/sources?apiKey');
       const nodes = response.data;
       commit('SET_SOURCES', nodes);
+    },
+    async updateHeadline({ commit }, { headline }) {
+      commit('UPDATE_HEADLINE', { headline });
     },
   },
 });
