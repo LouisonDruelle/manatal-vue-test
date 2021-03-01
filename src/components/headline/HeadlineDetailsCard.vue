@@ -29,42 +29,23 @@
         <v-card-text class="text--primary py-3">
           <div>{{ headline.content }}</div>
         </v-card-text>
-        <v-card-text class="text--primary py-3">
+        <v-card-text class="text--primary py-6">
           Author: {{ headline.author }}
         </v-card-text>
-        <v-card-actions>
-          <v-btn
-            @click="editTitle()"
-            color="purple"
-            text
-          >
-            Edit title
-          </v-btn>
-        </v-card-actions>
       </v-card>
-      <HeadlineDialog :headline="headline" :dialog="dialog" @close="dialog = false"/>
+    <BackButton />
   </div>
 </template>
 
 <script>
 import dayjs from 'dayjs';
-import HeadlineDialog from './HeadlineDialog.vue';
+import BackButton from '@/components/BackButton.vue';
 
 export default {
   props: ['headline'],
 
   components: {
-    HeadlineDialog,
-  },
-
-  data: () => ({
-    dialog: false,
-  }),
-
-  methods: {
-    editTitle() {
-      this.dialog = true;
-    },
+    BackButton,
   },
 
   filters: {

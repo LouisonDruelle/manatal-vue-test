@@ -1,16 +1,19 @@
 <template>
   <div>
     <ErrorAlert :error="error"/>
+    <BackButton />
   </div>
 </template>
 
 <script>
 import ErrorAlert from '@/components/ErrorAlert.vue';
+import BackButton from '@/components/BackButton.vue';
 
 export default {
   name: 'ErrorExample',
   components: {
     ErrorAlert,
+    BackButton,
   },
   data() {
     return {
