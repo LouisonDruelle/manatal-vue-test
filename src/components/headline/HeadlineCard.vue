@@ -30,7 +30,7 @@
           {{ headline.publishedAt | date }}
         </v-card-subtitle>
 
-        <v-card-text class="text--primary py-3">
+        <v-card-text class="text--primary py-3 subtitle-2">
           <div>{{ headline.title }}</div>
         </v-card-text>
         <v-card-actions>
