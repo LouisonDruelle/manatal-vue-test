@@ -20,3 +20,10 @@ export const getSources = ({ commit }) => {
 export const addHeadlineToHistory = ({ commit }, { headline }) => {
   commit('ADD_TO_HISTORY', { headline });
 };
+
+export const searchHeadlines = ({ commit }, { keyword }) => {
+  axios.get(`${API_URL}top-headlines?q=${keyword}&apiKey=${API_KEY}`)
+    .then((response) => {
+      commit('SET_HEADLINES', response.data.articles);
+    });
+};

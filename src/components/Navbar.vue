@@ -7,12 +7,21 @@
       <v-toolbar-title>SqwaNews.</v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-menu left bottom>
+      <v-col
+        cols="5"
+        sm="6"
+        md="4"
+      >
+      <v-text-field
+        solo
+        light
+        dense
+        hide-details
+        v-model="keyword"
+        @keydown="searchHeadline"
+      ></v-text-field>
+      </v-col>
+      <v-menu>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
@@ -24,8 +33,8 @@
         </template>
 
         <v-list>
-          <v-list-item>
-            <v-list-item-title @click="goToHistory()">History</v-list-item-title>
+          <v-list-item link class="px-10">
+            <v-list-item-title @click="$router.push('history')">History</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -35,9 +44,14 @@
 
 <script>
 export default {
+  data: () => ({
+    keyword: '',
+  }),
   methods: {
-    goToHistory() {
-      this.$router.push('history');
+    searchHeadline() {
+      this.$store.dispatch('searchHeadlines', {
+        keyword: this.keyword,
+      });
     },
   },
 };
