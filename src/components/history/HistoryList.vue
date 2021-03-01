@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import SectionTitle from './SectionTitle.vue';
+import SectionTitle from '../SectionTitle.vue';
 import HistoryItem from './HistoryItem.vue';
 
 export default {
