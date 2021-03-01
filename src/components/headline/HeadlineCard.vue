@@ -11,6 +11,7 @@
       <v-card
         class="mx-auto mb-6"
         max-width="800"
+        style="height:410px"
       >
         <v-img
           v-if="headline.urlToImage"
@@ -30,7 +31,7 @@
           {{ headline.publishedAt | date }}
         </v-card-subtitle>
 
-        <v-card-text class="text--primary py-3 subtitle-2">
+        <v-card-text class="text--primary py-3 subtitle-2" style="height:110px">
           <div>{{ headline.title }}</div>
         </v-card-text>
         <v-card-actions>

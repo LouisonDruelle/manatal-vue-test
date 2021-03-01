@@ -29,7 +29,7 @@
         <v-card-text class="text--primary py-3">
           <div>{{ headline.content }}</div>
         </v-card-text>
-        <v-card-text class="text--primary py-6">
+        <v-card-text class="text--primary py-6" v-if="headline.author">
           Author: {{ headline.author }}
         </v-card-text>
       </v-card>
