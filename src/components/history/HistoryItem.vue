@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item :key="headline.title">
+    <v-list-item :key="headline.title" @click="getHeadlineDetails()">
       <v-list-item-avatar size="70">
         <v-img :src="headline.urlToImage"></v-img>
       </v-list-item-avatar>
@@ -17,5 +17,10 @@
 <script>
 export default {
   props: ['headline'],
+  methods: {
+    getHeadlineDetails() {
+      this.$router.push({ name: 'Headline', params: { headline: this.headline } });
+    },
+  },
 };
 </script>
