@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import ErrorExample from '../views/ErrorExample.vue';
 import Home from '../views/Home.vue';
 import History from '../views/History.vue';
 import Headline from '../views/Headline.vue';
@@ -27,6 +28,11 @@ const routes = [
     path: '/sources',
     name: 'Sources',
     component: Sources,
+  },
+  {
+    path: '/error',
+    name: 'ErrorExample',
+    component: ErrorExample,
   },
 ];
 
