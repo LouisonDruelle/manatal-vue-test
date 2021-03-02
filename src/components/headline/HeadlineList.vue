@@ -1,14 +1,14 @@
 <template>
   <div>
     <v-select
-      solo
       chips
       v-model="selectedSources"
       :items="sources"
       multiple
       clearable
-      hint="Filter by sources"
       style="width:40%"
+      class="ml-auto"
+      placeholder="Filter by sources"
     ></v-select>
     <Spinner v-if="loading && headlines.length == 0"/>
     <ErrorAlert v-if="error" :error="error"/>
