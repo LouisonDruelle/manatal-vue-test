@@ -21,7 +21,9 @@ export default new Vuex.Store({
     ADD_TO_HISTORY(state, headline) {
       state.history.push(headline);
     },
-    SET_SOURCES(state, sources) {
+    SET_SOURCES(state, headlines) {
+      const sources = [];
+      headlines.map((h) => sources.push(h.source.name));
       state.sources = sources;
     },
     UPDATE_HEADLINE(state, headline) {
@@ -38,11 +40,7 @@ export default new Vuex.Store({
       const response = await axios.get(`${API_URL}top-headlines?country=us&apiKey=${API_KEY}`);
       const headlines = response.data.articles;
       commit('SET_HEADLINES', headlines);
-    },
-    async getSources({ commit }) {
-      const response = await axios.get(`${API_URL}sources?apiKey=${API_KEY}`);
-      const { sources } = response.data;
-      commit('SET_SOURCES', sources);
+      commit('SET_SOURCES', headlines);
     },
     async addHeadlineToHistory({ commit }, { headline }) {
       commit('ADD_TO_HISTORY', { headline });
