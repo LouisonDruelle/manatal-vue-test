@@ -1,24 +1,13 @@
-# manatal-vue-test
+# vue-test
 
-## Project setup
+Front-end application with Vue.js allowing a user to see the news from various websites using Vue Router, Vuetify, Vuex and [https://newsapi.org](https://newsapi.org) API.
+
+## Installation
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Use
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
