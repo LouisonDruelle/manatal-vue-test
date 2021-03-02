@@ -1,15 +1,15 @@
 <template>
   <div>
+    <v-col cols="12" sm="6" md="5" lg="4" class="ml-auto">
     <v-select
       chips
       v-model="selectedSources"
       :items="sources"
       multiple
       clearable
-      style="width:40%"
-      class="ml-auto"
       placeholder="Filter by sources"
     ></v-select>
+    </v-col>
     <Spinner v-if="loading && headlines.length == 0"/>
     <ErrorAlert v-if="error" :error="error"/>
     <v-row v-else-if="selectedSources.length > 0">

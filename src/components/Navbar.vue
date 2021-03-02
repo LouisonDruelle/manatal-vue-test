@@ -12,14 +12,6 @@
         sm="6"
         md="4"
       >
-      <v-text-field
-        solo
-        light
-        dense
-        hide-details
-        v-model="keyword"
-        @keydown="searchHeadlines"
-      ></v-text-field>
       </v-col>
       <v-menu>
         <template v-slot:activator="{ on, attrs }">
@@ -50,23 +42,10 @@
 <script>
 export default {
   data: () => ({
-    keyword: '',
     routes: [
       { title: 'History', route: '/history' },
-      { title: 'Sources', route: '/sources' },
       { title: 'Error example', route: '/error' },
     ],
   }),
-  methods: {
-    async searchHeadlines() {
-      try {
-        await this.$store.dispatch('searchHeadlines', {
-          keyword: this.keyword,
-        });
-      } catch (e) {
-        console.log(e);
-      }
-    },
-  },
 };
 </script>
