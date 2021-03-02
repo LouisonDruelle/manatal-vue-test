@@ -1,6 +1,5 @@
 <template>
   <div>
-    <SectionTitle msg='Latest headlines'/>
     <v-select
       solo
       chips
@@ -31,14 +30,12 @@
 </template>
 
 <script>
-import SectionTitle from '../SectionTitle.vue';
 import ErrorAlert from '../ErrorAlert.vue';
 import Spinner from '../Spinner.vue';
 import HeadlineCard from './HeadlineCard.vue';
 
 export default {
   components: {
-    SectionTitle,
     ErrorAlert,
     Spinner,
     HeadlineCard,

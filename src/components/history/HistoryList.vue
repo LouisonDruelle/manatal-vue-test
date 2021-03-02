@@ -1,6 +1,5 @@
 <template>
   <div>
-    <SectionTitle msg='Visited headlines'/>
     <v-card max-width="800" class="mx-auto">
       <v-toolbar color="cyan" dark>
         <v-toolbar-title>History</v-toolbar-title>
@@ -16,12 +15,10 @@
 </template>
 
 <script>
-import SectionTitle from '../SectionTitle.vue';
 import HistoryItem from './HistoryItem.vue';
 
 export default {
   components: {
-    SectionTitle,
     HistoryItem,
   },
 
