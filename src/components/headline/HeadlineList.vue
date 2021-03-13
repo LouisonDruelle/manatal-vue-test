@@ -50,10 +50,10 @@ export default {
   },
   computed: {
     headlines() {
-      return this.$store.state.headlines;
+      return this.$store.state.headline.headlines;
     },
     sources() {
-      return this.$store.state.sources;
+      return this.$store.state.source.sources;
     },
   },
 

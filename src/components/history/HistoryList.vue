@@ -24,7 +24,7 @@ export default {
 
   computed: {
     history() {
-      return this.$store.state.history;
+      return this.$store.state.history.history;
     },
   },
 };
