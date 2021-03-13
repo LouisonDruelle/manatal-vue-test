@@ -24,6 +24,13 @@
           <v-btn
             color="blue darken-1"
             text
+            @click="close()"
+          >
+            Close
+          </v-btn>
+          <v-btn
+            color="blue darken-1"
+            text
             @click="save()"
           >
             Save
@@ -45,8 +52,11 @@ export default {
         length: (v) => v.length <= 150 || 'The title cannot have more than 150 characters',
       },
     },
+    title: '',
   }),
-
+  mounted() {
+    this.baseTitle = this.headline.title;
+  },
   computed: {
     showDialog() {
       return this.dialog;
@@ -60,6 +70,10 @@ export default {
         });
         this.$emit('close');
       }
+    },
+    close() {
+      this.headline.title = this.baseTitle;
+      this.$emit('close');
     },
   },
 };
