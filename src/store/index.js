@@ -26,13 +26,9 @@ export default new Vuex.Store({
       headlines.map((h) => sources.push(h.source.name));
       state.sources = sources;
     },
-    UPDATE_HEADLINE(state, headline) {
-      const index = state.headlines.findIndex((item) => item.urlToImage === headline.urlToImage);
-      state.headlines = [
-        ...state.headlines.slice(0, index),
-        headline,
-        ...state.headlines.slice(index + 1),
-      ];
+    UPDATE_HEADLINE_TITLE(state, headline) {
+      const index = state.headlines.findIndex((h) => h.url === headline.url);
+      state.headlines[index].title = headline.title;
     },
   },
   actions: {
@@ -55,8 +51,8 @@ export default new Vuex.Store({
       const nodes = response.data;
       commit('SET_SOURCES', nodes);
     },
-    async updateHeadline({ commit }, { headline }) {
-      commit('UPDATE_HEADLINE', { headline });
+    async updateHeadlineTitle({ commit }, { title, url }) {
+      commit('UPDATE_HEADLINE_TITLE', { title, url });
     },
   },
 });

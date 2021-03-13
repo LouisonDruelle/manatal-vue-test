@@ -65,8 +65,9 @@ export default {
   methods: {
     save() {
       if (this.headline.title && this.headline.title.length < 150) {
-        this.$store.dispatch('updateHeadline', {
-          headline: this.headline,
+        this.$store.dispatch('updateHeadlineTitle', {
+          title: this.headline.title,
+          url: this.headline.url,
         });
         this.$emit('close');
       }
