@@ -7,12 +7,6 @@
       <v-toolbar-title @click="$router.push('/')">SqwaNews.</v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-col
-        cols="5"
-        sm="6"
-        md="4"
-      >
-      </v-col>
       <v-menu>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
