@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-card
+        v-if="headline"
         class="mx-auto"
         max-width="800"
       >
@@ -46,6 +47,12 @@ export default {
 
   components: {
     BackButton,
+  },
+
+  mounted() {
+    this.$store.dispatch('addHeadlineToHistory', {
+      headline: this.headline,
+    });
   },
 
   filters: {

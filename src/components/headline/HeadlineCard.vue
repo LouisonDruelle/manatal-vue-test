@@ -81,10 +81,7 @@ export default {
 
   methods: {
     getHeadlineDetails() {
-      this.$store.dispatch('addHeadlineToHistory', {
-        headline: this.headline,
-      });
-      this.$router.push({ name: 'Headline', params: { headline: this.headline } });
+      this.$router.push({ name: 'Headline', params: { id: this.headline.id } });
     },
     editTitle() {
       this.dialog = true;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item :key="headline.title" @click="getHeadlineDetails()">
+    <v-list-item v-if="headline" :key="headline.title" @click="getHeadlineDetails()">
       <v-list-item-avatar size="70">
         <v-img :src="headline.urlToImage"></v-img>
       </v-list-item-avatar>
@@ -19,7 +19,7 @@ export default {
   props: ['headline'],
   methods: {
     getHeadlineDetails() {
-      this.$router.push({ name: 'Headline', params: { headline: this.headline } });
+      this.$router.push({ name: 'Headline', params: { id: this.headline.id } });
     },
   },
 };

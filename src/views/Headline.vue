@@ -13,16 +13,14 @@ export default {
     HeadlineDetailsCard,
   },
 
-  data: () => ({
-    headline: [],
-  }),
+  computed: {
+    headline() {
+      return this.$store.state.headline.headlines[this.$route.params.id - 1];
+    },
+  },
 
   mounted() {
-    if (!this.$route.params.headline) {
-      this.$router.push('/');
-    } else {
-      this.headline = this.$route.params.headline;
-    }
+    this.$store.dispatch('getHeadlines');
   },
 };
 </script>

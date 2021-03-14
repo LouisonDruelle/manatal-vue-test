@@ -9,7 +9,9 @@ const headlineModule = {
   },
   mutations: {
     SET_HEADLINES(state, headlines) {
-      state.headlines = headlines;
+      // add Ids to headlines for dynamic path /headline/:id
+      const headlinesWithId = headlines.map((headline, index) => ({ ...headline, id: index + 1 }));
+      state.headlines = headlinesWithId;
     },
     UPDATE_HEADLINE_TITLE(state, headline) {
       const index = state.headlines.findIndex((h) => h.url === headline.url);

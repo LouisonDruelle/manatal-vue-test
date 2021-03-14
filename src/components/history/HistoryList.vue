@@ -5,7 +5,7 @@
         <v-toolbar-title>History</v-toolbar-title>
       </v-toolbar>
 
-      <v-list three-line class="pa-0">
+      <v-list v-if="history" three-line class="pa-0">
         <template v-for="(item, index) in history">
           <HistoryItem :key="index" :headline="item.headline"/>
         </template>

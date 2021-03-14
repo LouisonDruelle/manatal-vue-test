@@ -19,7 +19,7 @@ const routes = [
     component: History,
   },
   {
-    path: '/headline',
+    path: '/headline/:id',
     name: 'Headline',
     component: Headline,
   },
