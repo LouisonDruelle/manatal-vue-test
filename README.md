@@ -12,9 +12,7 @@ npm install
 npm run serve
 ```
 
-### Test e2e (cypress)
+### Run e2e tests
 ```
 npm run test:e2e
 ```
-
-Then click 'run all specs' on the top right
